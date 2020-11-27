@@ -16,6 +16,12 @@ slog::full_message::full_message(const std::string& content, slog::severity_leve
     this->_init_time();
 }
 
+slog::full_message::full_message(const std::string& content, slog::severity_level level) {
+    this->content = content;
+    this->level = level;
+    this->_init_time();
+}
+
 slog::full_message::~full_message() {}
 
 slog::message slog::full_message::get(const slog::formatter& formatter) const {

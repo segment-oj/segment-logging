@@ -3,8 +3,6 @@
 #ifndef _SLOG_DEV_H
 #define _SLOG_DEV_H
 
-#include <future>
-#include <mutex>
 #include <queue>
 #include <string>
 #include <thread>
@@ -15,17 +13,18 @@ namespace slog {
 
 class common_device {
 public:
-    virtual void write(const slog::message& msg);
-    virtual void flush();
-
     common_device();
     ~common_device();
 
+    virtual void write(const slog::message& msg);
+    virtual void flush();
+    void force_wait(const size_t min_length = 0);
+
 protected:
-    virtual void raw_write(const slog::message& msg) const = 0;
+    virtual void raw_write(slog::message msg) const;
 
     std::thread worker;
-    std::queue< slog::message > messages;
+    std::queue< slog::message > message_queue;
 
 private:
     bool _worker_destory_flag;
@@ -40,7 +39,7 @@ public:
     void flush() override;
 
 protected:
-    void raw_write(const slog::message& msg) const override;
+    void raw_write(slog::message msg) const override;
 
 private:
     static console* _instance;

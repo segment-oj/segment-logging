@@ -1,0 +1,32 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.16)
+
+PROJECT(SegmentLog)
+
+add_compile_options(-g3)
+
+INCLUDE_DIRECTORIES(
+    ${PROJECT_SOURCE_DIR}/include/
+)
+
+SET(CMAKE_CXX_STANDARD 17)
+
+SET(SRC_LIST
+    ${PROJECT_SOURCE_DIR}/src/index.cc
+    ${PROJECT_SOURCE_DIR}/src/format.cc
+    ${PROJECT_SOURCE_DIR}/src/message.cc
+    ${PROJECT_SOURCE_DIR}/src/source_point.cc
+    ${PROJECT_SOURCE_DIR}/src/devices/common.cc
+    ${PROJECT_SOURCE_DIR}/src/devices/console.cc
+)
+
+ENABLE_TESTING()
+
+SET(HEADER_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include/slog)
+
+ADD_LIBRARY(slog STATIC ${SRC_LIST})
+
+INSTALL(TARGETS slog
+    ARCHIVE DESTINATION lib
+)
+
+INSTALL(CODE "EXECUTE_PROCESS(COMMAND cp -rv ${HEADER_INCLUDE_DIR} ${CMAKE_INSTALL_PREFIX}/include)")

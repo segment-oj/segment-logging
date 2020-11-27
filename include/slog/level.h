@@ -5,7 +5,7 @@
 
 namespace slog {
 
-enum class severity_level {
+enum class severity_level : char {
     none = 127,
     debug = 0,
     info = 1,
