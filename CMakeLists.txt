@@ -14,7 +14,6 @@ SET(SRC_LIST
     ${PROJECT_SOURCE_DIR}/src/index.cc
     ${PROJECT_SOURCE_DIR}/src/format.cc
     ${PROJECT_SOURCE_DIR}/src/message.cc
-    ${PROJECT_SOURCE_DIR}/src/source_point.cc
     ${PROJECT_SOURCE_DIR}/src/devices/common.cc
     ${PROJECT_SOURCE_DIR}/src/devices/console.cc
 )

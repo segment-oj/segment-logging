@@ -21,7 +21,7 @@ public:
     void force_wait(const size_t min_length = 0);
 
 protected:
-    virtual void raw_write(slog::message msg) const;
+    virtual void raw_write(const slog::message& msg) const;
 
     std::thread worker;
     std::queue< slog::message > message_queue;
@@ -39,7 +39,7 @@ public:
     void flush() override;
 
 protected:
-    void raw_write(slog::message msg) const override;
+    void raw_write(const slog::message& msg) const override;
 
 private:
     static console* _instance;

@@ -9,7 +9,7 @@ slog::console::~console() {}
 
 void slog::console::flush() { fflush(stdout); }
 
-void slog::console::raw_write(slog::message msg) const {
+void slog::console::raw_write(const slog::message& msg) const {
     fmt::text_style style;
     if (msg.level == slog::severity_level::debug) {
         style = fmt::fg(fmt::color::gray);

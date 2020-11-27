@@ -1,0 +1,67 @@
+Ubuntu clang version 11.0.0-2
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/10
+Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/9
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/10
+Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/9
+Selected GCC installation: /usr/bin/../lib/gcc/x86_64-linux-gnu/10
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/usr/lib/llvm-11/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -mrelax-all -disable-free -disable-llvm-verifier -discard-value-names -main-file-name basic.cc -mrelocation-model static -mframe-pointer=all -fmath-errno -fno-rounding-math -mconstructor-aliases -munwind-tables -target-cpu x86-64 -fno-split-dwarf-inlining -debug-info-kind=limited -dwarf-version=4 -debugger-tuning=gdb -v -resource-dir /usr/lib/llvm-11/lib/clang/11.0.0 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../include/x86_64-linux-gnu/c++/10 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../include/x86_64-linux-gnu/c++/10 -internal-isystem /usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/backward -internal-isystem /usr/local/include -internal-isystem /usr/lib/llvm-11/lib/clang/11.0.0/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O0 -Wall -Wextra -std=c++17 -fdeprecated-macro -fdebug-compilation-dir /home/szdytom/Documents/code/Github/SegmentOJ/segmentoj-frontend/segment-logging/sample -ferror-limit 19 -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -faddrsig -o /tmp/basic-e474bc.o -x c++ basic.cc
+clang -cc1 version 11.0.0 based upon LLVM 11.0.0 default target x86_64-pc-linux-gnu
+ignoring nonexistent directory "/include"
+ignoring duplicate directory "/usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../include/x86_64-linux-gnu/c++/10"
+#include "..." search starts here:
+#include <...> search starts here:
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../include/x86_64-linux-gnu/c++/10
+ /usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/backward
+ /usr/local/include
+ /usr/lib/llvm-11/lib/clang/11.0.0/include
+ /usr/include/x86_64-linux-gnu
+ /usr/include
+End of search list.
+ "/usr/bin/ld" -z relro --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o basic.cli /usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crt1.o /usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crti.o /usr/bin/../lib/gcc/x86_64-linux-gnu/10/crtbegin.o -L/usr/local/lib -L/usr/bin/../lib/gcc/x86_64-linux-gnu/10 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu -L/usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/usr/lib/x86_64-linux-gnu/../../lib64 -L/usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../.. -L/usr/lib/llvm-11/bin/../lib -L/lib -L/usr/lib -lpthread -lfmt -lslog /tmp/basic-e474bc.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib/gcc/x86_64-linux-gnu/10/crtend.o /usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../x86_64-linux-gnu/crtn.o
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `main':
+/home/szdytom/Documents/code/Github/SegmentOJ/segmentoj-frontend/segment-logging/sample/basic.cc:8: undefined reference to `slog::logger::logger(std::shared_ptr<slog::common_device>, slog::severity_level)'
+/usr/bin/ld: /home/szdytom/Documents/code/Github/SegmentOJ/segmentoj-frontend/segment-logging/sample/basic.cc:10: undefined reference to `slog::logger::debug(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/usr/bin/ld: /home/szdytom/Documents/code/Github/SegmentOJ/segmentoj-frontend/segment-logging/sample/basic.cc:11: undefined reference to `slog::logger::info(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > fmt::v7::format<char [15], int&, char>(char const (&) [15], int&)':
+/usr/local/include/fmt/core.h:1836: undefined reference to `fmt::v7::detail::vformat[abi:cxx11](fmt::v7::basic_string_view<char>, fmt::v7::format_args)'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `main':
+/home/szdytom/Documents/code/Github/SegmentOJ/segmentoj-frontend/segment-logging/sample/basic.cc:13: undefined reference to `slog::logger::warning(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/usr/bin/ld: /home/szdytom/Documents/code/Github/SegmentOJ/segmentoj-frontend/segment-logging/sample/basic.cc:15: undefined reference to `slog::logger::error(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)'
+/usr/bin/ld: /home/szdytom/Documents/code/Github/SegmentOJ/segmentoj-frontend/segment-logging/sample/basic.cc:21: undefined reference to `slog::logger::~logger()'
+/usr/bin/ld: /home/szdytom/Documents/code/Github/SegmentOJ/segmentoj-frontend/segment-logging/sample/basic.cc:21: undefined reference to `slog::logger::~logger()'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `fmt::v7::text_style::operator|=(fmt::v7::text_style const&)':
+/usr/local/include/fmt/color.h:(.text._ZN3fmt2v710text_styleoRERKS1_[_ZN3fmt2v710text_styleoRERKS1_]+0x8f): undefined reference to `typeinfo for fmt::v7::format_error'
+/usr/bin/ld: /usr/local/include/fmt/color.h:(.text._ZN3fmt2v710text_styleoRERKS1_[_ZN3fmt2v710text_styleoRERKS1_]+0x99): undefined reference to `fmt::v7::format_error::~format_error()'
+/usr/bin/ld: /usr/local/include/fmt/color.h:(.text._ZN3fmt2v710text_styleoRERKS1_[_ZN3fmt2v710text_styleoRERKS1_]+0x15a): undefined reference to `typeinfo for fmt::v7::format_error'
+/usr/bin/ld: /usr/local/include/fmt/color.h:(.text._ZN3fmt2v710text_styleoRERKS1_[_ZN3fmt2v710text_styleoRERKS1_]+0x164): undefined reference to `fmt::v7::format_error::~format_error()'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `format_error':
+/usr/local/include/fmt/format.h:715: undefined reference to `vtable for fmt::v7::format_error'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `void __gnu_cxx::new_allocator<slog::console>::construct<slog::console>(slog::console*)':
+/usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/ext/new_allocator.h:150: undefined reference to `slog::console::console()'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `void __gnu_cxx::new_allocator<slog::console>::destroy<slog::console>(slog::console*)':
+/usr/bin/../lib/gcc/x86_64-linux-gnu/10/../../../../include/c++/10/ext/new_allocator.h:156: undefined reference to `slog::console::~console()'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `void fmt::v7::detail::vformat_to<char>(fmt::v7::basic_memory_buffer<char, 500ul, std::allocator<char> >&, fmt::v7::text_style const&, fmt::v7::basic_string_view<char>, fmt::v7::basic_format_args<fmt::v7::basic_format_context<std::back_insert_iterator<fmt::v7::detail::buffer<char> >, char> >)':
+/usr/local/include/fmt/color.h:492: undefined reference to `fmt::v7::basic_format_context<std::back_insert_iterator<fmt::v7::detail::buffer<char> >, char>::iterator fmt::v7::detail::vformat_to<char>(fmt::v7::detail::buffer<char>&, fmt::v7::basic_string_view<char>, fmt::v7::basic_format_args<fmt::v7::basic_format_context<std::back_insert_iterator<fmt::v7::detail::buffer<fmt::v7::type_identity<char>::type> >, fmt::v7::type_identity<char>::type> >)'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `fmt::v7::text_style::get_emphasis() const':
+/usr/local/include/fmt/color.h:310: undefined reference to `fmt::v7::detail::assert_fail(char const*, int, char const*)'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `fmt::v7::detail::ansi_color_escape<char> fmt::v7::detail::make_foreground_color<char>(fmt::v7::detail::color_type)':
+/usr/local/include/fmt/color.h:433: undefined reference to `fmt::v7::detail::basic_data<void>::foreground_color'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `fmt::v7::text_style::get_foreground() const':
+/usr/local/include/fmt/color.h:302: undefined reference to `fmt::v7::detail::assert_fail(char const*, int, char const*)'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `fmt::v7::detail::ansi_color_escape<char> fmt::v7::detail::make_background_color<char>(fmt::v7::detail::color_type)':
+/usr/local/include/fmt/color.h:439: undefined reference to `fmt::v7::detail::basic_data<void>::background_color'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `fmt::v7::text_style::get_background() const':
+/usr/local/include/fmt/color.h:306: undefined reference to `fmt::v7::detail::assert_fail(char const*, int, char const*)'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `void fmt::v7::detail::reset_color<char>(fmt::v7::basic_memory_buffer<char, 500ul, std::allocator<char> >&)':
+/usr/local/include/fmt/color.h:467: undefined reference to `fmt::v7::detail::basic_data<void>::reset_color'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `std::make_unsigned<long>::type fmt::v7::detail::to_unsigned<long>(long)':
+/usr/local/include/fmt/core.h:317: undefined reference to `fmt::v7::detail::assert_fail(char const*, int, char const*)'
+/usr/bin/ld: /tmp/basic-e474bc.o: in function `ansi_color_escape':
+/usr/local/include/fmt/color.h:361: undefined reference to `fmt::v7::detail::basic_data<void>::background_color'
+clang: error: linker command failed with exit code 1 (use -v to see invocation)

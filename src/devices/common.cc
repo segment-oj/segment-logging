@@ -2,7 +2,7 @@
 #include <chrono>
 #include "slog/dev.h"
 
-void slog::common_device::raw_write(slog::message msg) const { printf("PVFC!\n"); }
+void slog::common_device::raw_write(const slog::message& msg) const { printf("PVFC!\n"); }
 
 slog::common_device::~common_device() { this->_worker_destory_flag = true; }
 
@@ -25,7 +25,7 @@ void slog::common_device::_log_write_worker_func() {
         } else {
             lazy_sleep_ms = 1;
             while (!this->message_queue.empty()) {
-                auto this_message{this->message_queue.front()};
+                const auto& this_message{this->message_queue.front()};
                 this->raw_write(this_message);
                 this->message_queue.pop();
             }

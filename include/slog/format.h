@@ -7,18 +7,17 @@
 #include <string>
 #include <ctime>
 #include "slog/level.h"
-#include "slog/source_point.h"
 
 namespace slog {
 
-// (content, level, time, source)
+// (content, level, time)
 using formatter = std::function< std::string(const std::string&, const slog::severity_level,
-                                             const std::time_t, const std::string&) >;
+                                             const std::time_t) >;
 
 std::string default_formatter(const std::string& content, const slog::severity_level level,
-                              const std::time_t emit_time, const std::string& source);
+                              const std::time_t emit_time);
 std::string simple_formatter(const std::string& content, const slog::severity_level level,
-                              const std::time_t emit_time, const std::string& source);
+                              const std::time_t emit_time);
 } // namespace slog
 
 #endif // #define _SLOG_FORMAT_H
