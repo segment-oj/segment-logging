@@ -21,5 +21,7 @@ void slog::console::raw_write(const slog::message& msg) const {
         style = fmt::fg(fmt::color::red) | fmt::emphasis::bold;
     }
 
-    fmt::print(style, "{}\n", msg.content);
+    // std::fprintf(stderr, "%s\n", msg.content.c_str());
+    // std::fflush(stderr);
+    // fmt::print(style, "{}\n", msg.content);
 }

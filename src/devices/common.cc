@@ -48,5 +48,9 @@ slog::common_device::common_device() {
 void slog::common_device::write(const slog::message& msg) {
     // static const size_t max_queue_length{static_cast<size_t>(1000)};
     // this->force_wait(max_queue_length);
+    // std::fprintf(stderr, "%s\n", msg.content.c_str());
+    // std::fflush(stderr);
     this->message_queue.push(msg);
+    std::fprintf(stderr, "> %s\n", this->message_queue.back().content.c_str());
+    std::fflush(stderr);
 }

@@ -14,7 +14,7 @@ namespace slog {
 class common_device {
 public:
     common_device();
-    ~common_device();
+    virtual ~common_device();
 
     virtual void write(const slog::message& msg);
     virtual void flush();

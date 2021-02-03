@@ -8,7 +8,6 @@
 #include "slog/dev.h"
 #include "slog/format.h"
 #include "slog/level.h"
-#include "slog/source_point.h"
 
 namespace slog {
 

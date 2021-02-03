@@ -2,7 +2,20 @@ CMAKE_MINIMUM_REQUIRED(VERSION 3.16)
 
 PROJECT(SegmentLog)
 
-add_compile_options(-g3)
+# -FPIE problem
+ADD_COMPILE_OPTIONS(-fPIE)
+
+# Warnings
+IF ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+    # using Clang
+    ADD_COMPILE_OPTIONS(-Wall -Wextra)
+ELSEIF ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+    # using G++
+    ADD_COMPILE_OPTIONS(-Wall -Wextra)
+ELSEIF ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
+    # using Visual Studio C++
+    ADD_COMPILE_OPTIONS(-W4)
+ENDIF()
 
 INCLUDE_DIRECTORIES(
     ${PROJECT_SOURCE_DIR}/include/
